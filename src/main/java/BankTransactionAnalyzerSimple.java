@@ -12,13 +12,12 @@ import java.util.List;
 public class BankTransactionAnalyzerSimple {
     private static final String RESOURCE = "src/main/resource";
 
-    public static void main(final String... args) throws IOException {
-        final BankStatementCSVParser bankStatementCSVParser = new BankStatementCSVParser();
-
-        final Path path = Paths.get(RESOURCE + args[0]);
+    public void analyze(final String fileName, final BankStatementParser bankStatementParser) throws IOException {
+        final Path path = Paths.get(RESOURCE + fileName);
         final List<String> lines = Files.readAllLines(path);
 
-        final List<BankTransaction> bankTransactions = bankStatementCSVParser.parseLinesFromCSV(lines);
+        final List<BankTransaction> bankTransactions = bankStatementParser.parseLineFrom(lines);
+
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 
         collectSummary(bankStatementProcessor);
