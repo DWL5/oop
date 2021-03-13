@@ -1,3 +1,5 @@
+package deposit_withdrawal_analyzer;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

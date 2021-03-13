@@ -1,3 +1,5 @@
+package deposit_withdrawal_analyzer;
+
 import java.util.List;
 
 public interface BankStatementParser {

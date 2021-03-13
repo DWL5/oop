@@ -1,3 +1,5 @@
+package deposit_withdrawal_analyzer;
+
 import java.time.LocalDate;
 
 public class BankTransaction {

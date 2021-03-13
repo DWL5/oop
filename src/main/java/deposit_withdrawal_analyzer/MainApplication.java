@@ -1,3 +1,5 @@
+package deposit_withdrawal_analyzer;
+
 import java.io.IOException;
 
 public class MainApplication {
