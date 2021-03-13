@@ -1,3 +1,5 @@
+package deposit_withdrawal_analyzer;
+
 public class SummaryStatistics {
 
     private final double sum;
