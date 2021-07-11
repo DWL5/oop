@@ -1,15 +1,18 @@
 import java.util.List;
 
-public class Movie {
+public abstract class Movie {
 
     private String title;
     private Duration runningTime;
     private Money fee;
     private List<DiscountCondition> discountConditions;
 
-    private MovieType movieType;
-    private Money discountAmount;
-    private double discountPercent;
+    public Movie(final String title, final Duration runningTime, final Money fee, final List<DiscountCondition> discountConditions) {
+        this.title = title;
+        this.runningTime = runningTime;
+        this.fee = fee;
+        this.discountConditions = discountConditions;
+    }
 
     public Money calculateMovieFee(Screening screening) {
         if (isDiscountable(screening)) {
@@ -24,28 +27,21 @@ public class Movie {
                 .anyMatch(condition -> condition.isSatisfiedBy(screening));
     }
 
-    private Money calculateDiscountAmount() {
-        switch (movieType) {
-            case NONE_DISCOUNT:
-                return calculateNoneDiscountAmount();
-            case AMOUNT_DISCOUNT:
-                return calculatePercentDiscountAmount();
-            case PERCENT_DISCOUNT:
-                return calculateAmountDiscountAmount();
-        }
+    abstract protected Money calculateDiscountAmount();
 
-        throw new IllegalStateException();
+    protected String getTitle() {
+        return title;
     }
 
-    private Money calculateNoneDiscountAmount() {
-        return discountAmount;
+    protected Duration getRunningTime() {
+        return runningTime;
     }
 
-    private Money calculatePercentDiscountAmount() {
-        return fee.times(discountPercent);
+    protected Money getFee() {
+        return fee;
     }
 
-    private Money calculateAmountDiscountAmount() {
-        return Money.ZERO;
+    protected List<DiscountCondition> getDiscountConditions() {
+        return discountConditions;
     }
 }
