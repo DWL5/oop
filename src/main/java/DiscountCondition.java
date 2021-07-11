@@ -19,7 +19,6 @@ public class DiscountCondition {
 
     private boolean isSatisfiedBySequence(final Screening screening) {
         return sequence == screening.getSequence();
-
     }
 
     private boolean isSatisfiedByPeriod(final Screening screening) {
