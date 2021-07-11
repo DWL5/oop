@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 
 public class Screening {
 
-    private Movie movie;
+    private AbstractMovie movie;
     private int sequence;
     private LocalDateTime whenScreened;
 
