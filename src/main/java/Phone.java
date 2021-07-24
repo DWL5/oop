@@ -13,7 +13,7 @@ public class Phone {
     public List<Call> getCalls() {
         return Collections.unmodifiableList(calls);
     }
-    
+
     public Money calculateFee() {
         return ratePolicy.calculateFee(this);
     }
