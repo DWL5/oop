@@ -1,3 +1,5 @@
+package object.phone;
+
 import java.time.Duration;
 
 public class FeePerDuration {

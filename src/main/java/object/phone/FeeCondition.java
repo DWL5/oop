@@ -1,3 +1,5 @@
+package object.phone;
+
 import java.util.List;
 
 public interface FeeCondition {

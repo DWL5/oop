@@ -1,3 +1,5 @@
+package object.phone;
+
 public abstract class BasicRatePolicy implements RatePolicy{
     @Override
     public Money calculateFee(Phone phone) {

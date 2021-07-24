@@ -1,3 +1,5 @@
+package object.phone;
+
 public class FeeRule {
     private FeeCondition feeCondition;
     private FeePerDuration feePerDuration;

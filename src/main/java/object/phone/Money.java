@@ -1,3 +1,5 @@
+package object.phone;
+
 public class Money {
     public static Money ZERO = new Money(0L);
 
