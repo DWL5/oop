@@ -9,7 +9,15 @@ public class Money {
         this.value = value;
     }
 
+    public Money(double doubleValue) {
+        this.value = Double.doubleToLongBits(doubleValue);
+    }
+
     public Money times(long value) {
+        return new Money(this.value * value);
+    }
+
+    public Money times(double value) {
         return new Money(this.value * value);
     }
 
