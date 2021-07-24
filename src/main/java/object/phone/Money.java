@@ -28,4 +28,8 @@ public class Money {
     public Long getValue() {
         return value;
     }
+
+    public Money minus(Money discountAmount) {
+        return new Money(this.value - discountAmount.getValue());
+    }
 }
